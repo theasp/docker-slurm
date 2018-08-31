@@ -1,0 +1,93 @@
+# slurm.conf
+#
+# See the slurm.conf man page for more information.
+#
+ClusterName=${CLUSTERNAME}
+ControlMachine=${HOSTNAME}
+#ControlAddr=
+#BackupController=
+#BackupAddr=
+#
+SlurmUser=slurm
+#SlurmdUser=root
+SlurmctldPort=6817
+SlurmdPort=6818
+AuthType=auth/munge
+#JobCredentialPrivateKey=
+#JobCredentialPublicCertificate=
+StateSaveLocation=/var/lib/slurm-llnl
+SlurmdSpoolDir=/var/spool/slurm-llnl
+SwitchType=switch/none
+MpiDefault=none
+SlurmctldPidFile=/var/run/slurmd/slurmctld.pid
+SlurmdPidFile=/var/run/slurmd/slurmd.pid
+ProctrackType=proctrack/pgid
+#PluginDir=
+CacheGroups=0
+#FirstJobId=
+ReturnToService=0
+#MaxJobCount=
+#PlugStackConfig=
+#PropagatePrioProcess=
+#PropagateResourceLimits=
+#PropagateResourceLimitsExcept=
+#Prolog=
+#Epilog=
+#SrunProlog=
+#SrunEpilog=
+#TaskProlog=
+#TaskEpilog=
+#TaskPlugin=
+#TrackWCKey=no
+#TreeWidth=50
+#TmpFS=
+#UsePAM=
+#
+# TIMERS
+SlurmctldTimeout=300
+SlurmdTimeout=300
+InactiveLimit=0
+MinJobAge=300
+KillWait=30
+Waittime=0
+#
+# SCHEDULING
+SchedulerType=sched/backfill
+#SchedulerAuth=
+#SchedulerPort=
+#SchedulerRootFilter=
+SelectType=select/cons_res
+SelectTypeParameters=CR_CPU_Memory
+FastSchedule=1
+#PriorityType=priority/multifactor
+#PriorityDecayHalfLife=14-0
+#PriorityUsageResetPeriod=14-0
+#PriorityWeightFairshare=100000
+#PriorityWeightAge=1000
+#PriorityWeightPartition=10000
+#PriorityWeightJobSize=1000
+#PriorityMaxAge=1-0
+#
+# LOGGING
+SlurmctldDebug=debug
+SlurmctldLogFile=/var/log/slurm/slurmctld.log
+SlurmdDebug=debug
+SlurmdLogFile=/var/log/slurm/slurmd.log
+JobCompType=jobcomp/none
+#JobCompLoc=
+#
+# ACCOUNTING
+#JobAcctGatherType=jobacct_gather/linux
+#JobAcctGatherFrequency=30
+#
+#AccountingStorageType=accounting_storage/slurmdbd
+#AccountingStorageHost=localhost
+#AccountingStorageLoc=
+#AccountingStoragePass=
+#AccountingStorageUser=
+#
+# COMPUTE NODES
+NodeName=${HOSTNAME} NodeAddr=127.0.0.1 RealMemory=1000
+#
+# PARTITIONS
+PartitionName=normal Default=yes Nodes=${HOSTNAME} Priority=50 DefMemPerCPU=500 Shared=NO State=UP
