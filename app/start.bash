@@ -7,6 +7,7 @@ export CLUSTERNAME=$(hostname)
 
 
 mkdir -p /var/run/munge
+mkdir -p /var/log/supervisor
 chown munge:munge /var/run/munge/
 
 test -e /etc/munge/munge.key || /sbin/create-munge-key
