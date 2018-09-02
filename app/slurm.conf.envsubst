@@ -19,8 +19,6 @@ StateSaveLocation=/var/lib/slurm-llnl
 SlurmdSpoolDir=/var/spool/slurm-llnl
 SwitchType=switch/none
 MpiDefault=none
-SlurmctldPidFile=/var/run/slurmd/slurmctld.pid
-SlurmdPidFile=/var/run/slurmd/slurmd.pid
 ProctrackType=proctrack/pgid
 #PluginDir=
 #FirstJobId=
@@ -69,9 +67,7 @@ FastSchedule=1
 #
 # LOGGING
 SlurmctldDebug=debug
-SlurmctldLogFile=/var/log/slurm-llnl/slurmctld.log
 SlurmdDebug=debug
-SlurmdLogFile=/var/log/slurm-llnl/slurmd.log
 JobCompType=jobcomp/none
 #JobCompLoc=
 #
