@@ -10,7 +10,9 @@ mkdir -p /var/run/munge
 mkdir -p /var/log/supervisor
 mkdir -p /var/log/slurm-llnl
 mkdir -p /var/run/slurm-llnl
-chown munge:munge /var/run/munge/
+
+chown -R munge:munge /var/run/munge
+chown -R slurm:slurm /var/lib/slurm-llnl
 
 test -e /etc/munge/munge.key || /sbin/create-munge-key
 test -e /etc/slurm-llnl/slurm.conf || envsubst < /app/slurm.conf.envsubst > /etc/slurm-llnl/slurm.conf
