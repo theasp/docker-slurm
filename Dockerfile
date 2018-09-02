@@ -9,5 +9,4 @@ RUN set -ex; \
   rm -rf /var/lib/apt/lists/*
 
 COPY app/ /app/
-VOLUME ["/var/lib/slurm-llnl", "/var/log/slurm-llnl"]
 CMD ["/app/start.bash"]
